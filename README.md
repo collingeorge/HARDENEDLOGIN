@@ -246,7 +246,7 @@ After SSH login:
 
 ## License
 
-MIT License – see \`LICENSE\` file.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/collingeorge/HARDENEDLOGIN/blob/main/LICENSE) file for details.
 
 ## Credits
 
