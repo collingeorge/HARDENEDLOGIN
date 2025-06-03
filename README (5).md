@@ -82,6 +82,7 @@ auth optional pam_cap.so
 auth required pam_google_authenticator.so nullok
 ```
 This allows password-only fallback before 2FA is set. This will be removed in the final step.
+
 ---
 
 ### 3. SSH Server Configuration
@@ -109,12 +110,12 @@ sudo systemctl restart sshd
 
 ### 4. PAM SSHD Configuration
 
-Edit \`/etc/pam.d/sshd\`:
+Edit /etc/pam.d/sshd:
 
 **Add at the top:**
-\`\`\`plaintext
+```plaintext
 auth required pam_google_authenticator.so nullok
-\`\`\`
+```
 
 ---
 
@@ -122,9 +123,9 @@ auth required pam_google_authenticator.so nullok
 
 Run:
 
-\`\`\`bash
+```bash
 google-authenticator
-\`\`\`
+```
 
 - Choose **time-based tokens** (\`y\`)
 - Use **secret key** (not QR code) to add account to Aegis
