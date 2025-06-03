@@ -65,7 +65,11 @@ sudo apt install libpam-google-authenticator -y
 
 ### 2. PAM Configuration
 
-Edit \`/etc/pam.d/common-auth\`:
+Edit /etc/pam.d/common-auth\:
+
+```bash
+nano /etc/pam.d/common-auth\
+```
 
 **Before:**
 ```plaintext
@@ -77,28 +81,29 @@ auth optional pam_cap.so
 auth optional pam_cap.so
 auth required pam_google_authenticator.so nullok
 ```
-
- \`nullok\` allows password-only fallback before 2FA is set. This will be removed in the final step.
-
+This allows password-only fallback before 2FA is set. This will be removed in the final step.
 ---
 
 ### 3. SSH Server Configuration
 
-Edit \`/etc/ssh/sshd_config\`:
+Edit /etc/ssh/sshd_config:
 
+```bash
+nano /etc/ssh/sshd_config
+```
 - Add below line ~62:
-  \`\`\`plaintext
+  ```plaintext
   ChallengeResponseAuthentication yes
-  \`\`\`
+  ```
 - Add below line ~86:
-  \`\`\`plaintext
+  ```plaintext
   AuthenticationMethods keyboard-interactive
-  \`\`\`
+  ```
 
 Then restart SSH:
-\`\`\`bash
+```bash
 sudo systemctl restart sshd
-\`\`\`
+```
 
 ---
 
