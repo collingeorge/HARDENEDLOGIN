@@ -180,7 +180,7 @@ After SSH login:
 
 ---
 
-## 🧭 Future-Proofing
+## Future-Proofing
 
 | Component                    | Viability     | Notes                                   |
 |-----------------------------|---------------|-----------------------------------------|
