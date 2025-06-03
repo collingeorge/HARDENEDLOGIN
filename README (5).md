@@ -44,7 +44,7 @@ This guide documents a secure, NIST-compliant implementation of two-factor authe
 
 ### 1. SSH and System Preparation
 
-Update and reboot:
+Update, upgrade and reboot:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
