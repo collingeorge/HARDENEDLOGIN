@@ -117,7 +117,7 @@ sudo systemctl restart sshd
 
 Edit /etc/pam.d/sshd:
 
-Add at the top:
+**Add at the top:**
 
 ```plaintext
 auth required pam_google_authenticator.so nullok
