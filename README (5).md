@@ -44,16 +44,16 @@ This guide documents a secure, NIST-compliant implementation of two-factor authe
 
 ### 1. SSH and System Preparation
 
-\`\`\`bash
+```bash
 sudo apt update && sudo apt upgrade -y
 sudo reboot
-\`\`\`
+```
 
 Set a system password:
 
-\`\`\`bash
+```bash
 sudo passwd <your-username>
-\`\`\`
+```
 
 Install Google Authenticator PAM module:
 
