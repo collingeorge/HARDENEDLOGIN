@@ -248,6 +248,14 @@ After SSH login:
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/collingeorge/HARDENEDLOGIN/blob/main/LICENSE) file for details.
 
+## Contribute
+
+Have a trustworthy threat feed to recommend? Submit a pull request or open an issue.
+
+## Support
+
+Need help with .reg, .bat, .exe, or GPO/Intune deployment? Open an issue or PR, and assistance will be provided.
+
 ## Credits
 
-This guide was prepared with the assistance of [ChatGPT by OpenAI](https://openai.com/chatgpt), published [here](https://chatgpt.com/share/683b7e3e-1214-8000-a615-9a368e150225)
+Created with the assistance of [ChatGPT by OpenAI](https://openai.com/chatgpt), for automation, formatting, and research, published [here](https://chatgpt.com/share/683f2294-7044-8000-ae54-aade7dcc5637)
