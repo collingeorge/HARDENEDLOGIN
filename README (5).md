@@ -1,12 +1,12 @@
-# Two-Factor Authentication (2FA) Hardening on AWS Ubuntu Systems
+# Two-Factor Authentication (2FA) Hardening on Ubuntu Pro 22.04 LTS system
 
-## 📌 Overview
+## Overview
 
 This guide documents a secure, NIST-compliant implementation of two-factor authentication (2FA) for an Ubuntu Pro 22.04 LTS system hosted on AWS. It combines biometric protection with time-based one-time passwords (TOTP) stored securely using the Aegis Authenticator app, enforced via PAM and SSH hardening.
 
 ---
 
-## 🔐 Two-Factor Authentication Mechanism
+## Two-Factor Authentication Mechanism
 
 ### Authenticator App
 
@@ -20,11 +20,11 @@ This guide documents a secure, NIST-compliant implementation of two-factor authe
 2. Backups are versioned and updated automatically on any account changes.
 3. Upload encrypted backup folder to a secure cloud storage provider.
 
-> ✅ Backup files can be verified under **Settings → Backups** in the Aegis app.
+> Backup files can be verified under **Settings → Backups** in the Aegis app.
 
 ---
 
-## 🖥️ AWS Cloud Environment
+##  AWS Cloud Environment
 
 ### Operating System
 - **Ubuntu Pro 22.04 LTS (FIPS 140-3 Certified)**
@@ -40,7 +40,7 @@ This guide documents a secure, NIST-compliant implementation of two-factor authe
 
 ---
 
-## 🛡️ Two-Factor Authentication Hardening Steps
+## Two-Factor Authentication Hardening Steps
 
 ### 1. SSH and System Preparation
 
@@ -78,7 +78,7 @@ auth optional pam_cap.so
 auth required pam_google_authenticator.so nullok
 \`\`\`
 
-> ⚠️ \`nullok\` allows password-only fallback before 2FA is set. This will be removed in the final step.
+ \`nullok\` allows password-only fallback before 2FA is set. This will be removed in the final step.
 
 ---
 
@@ -158,7 +158,7 @@ sudo systemctl restart sshd
 
 ---
 
-## 🔒 Final Login Flow
+## Final Login Flow
 
 After SSH login:
 1. Prompt for first verification code (TOTP)
@@ -168,15 +168,15 @@ After SSH login:
 
 ---
 
-## ✅ Compliance with NIST 800-63B
+## Compliance with NIST 800-63B
 
 | Requirement                             | Compliant | Reference                       |
 |----------------------------------------|-----------|---------------------------------|
-| MFA with two distinct factors          | ✅        | NIST SP 800-63B §5.1.1          |
-| Biometric use not as sole authenticator| ✅        | §5.2.3                          |
-| Cryptographic protection of TOTP secrets| ✅       | §5.1.4.1 (via Aegis + biometric)|
-| Mandatory use of 2FA (no \`nullok\`)     | ✅        | §5.1.5                          |
-| Rate limiting login attempts           | ✅        | §5.2.2                          |
+| MFA with two distinct factors          | YES        | NIST SP 800-63B §5.1.1          |
+| Biometric use not as sole authenticator| YES       | §5.2.3                          |
+| Cryptographic protection of TOTP secrets| YES       | §5.1.4.1 (via Aegis + biometric)|
+| Mandatory use of 2FA (no \`nullok\`)     | YES        | §5.1.5                          |
+| Rate limiting login attempts           | YES        | §5.2.2                          |
 
 ---
 
@@ -184,14 +184,14 @@ After SSH login:
 
 | Component                    | Viability     | Notes                                   |
 |-----------------------------|---------------|-----------------------------------------|
-| Aegis w/ biometric unlock    | ✅ 2025–2030+ | Secure TOTP with local biometric access |
-| FIPS 140-2 hardware key      | ⚠️ Deprecated by 2030 | Consider moving to FIPS 140-3 |
-| Google Authenticator (TOTP) | ✅ Still valid | Recommend shift to FIDO2/WebAuthn       |
-| Ubuntu Pro 22.04 LTS        | ✅ Until 2032 | 10-year support lifecycle               |
+| Aegis w/ biometric unlock    | YES 2025–2030+ | Secure TOTP with local biometric access |
+| FIPS 140-2 hardware key      | Deprecated by 2030 | Consider moving to FIPS 140-3 |
+| Google Authenticator (TOTP) | YES Still valid | Recommend shift to FIDO2/WebAuthn       |
+| Ubuntu Pro 22.04 LTS        | YES Until 2032 | 10-year support lifecycle               |
 
 ---
 
-## 📚 References
+## References
 
 - [NIST SP 800-63B: Digital Identity Guidelines - Authentication & Lifecycle Management](https://pages.nist.gov/800-63-3/sp800-63b.html)
 - [FIPS 140-3 Compliance Program](https://csrc.nist.gov/projects/cryptographic-module-validation-program)
@@ -201,7 +201,7 @@ After SSH login:
 
 ---
 
-## 🧩 Related Security Practices
+## Related Security Practices
 
 - Use \`auditd\` or \`fail2ban\` for additional login monitoring.
 - Enforce SSH key authentication before TOTP if FIDO keys are unavailable.
