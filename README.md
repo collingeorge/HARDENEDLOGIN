@@ -251,4 +251,5 @@ MIT License – see \`LICENSE\` file.
 ## Credits
 
 This guide was prepared with the assistance of [ChatGPT by OpenAI](https://openai.com/chatgpt), published [here](https://chatgpt.com/share/683f2294-7044-8000-ae54-aade7dcc5637) and based on the tutorial by IDRoot:
+
 - [How To Set Up Two Factor Authentication on Ubuntu 24.04](https://idroot.us/set-up-two-factor-authentication-ubuntu-24-04/
