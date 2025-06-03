@@ -151,8 +151,8 @@ Back up emergency codes to encrypted storage.
 
 Remove \`nullok\` from:
 
-- \`/etc/pam.d/common-auth\`
-- \`/etc/pam.d/sshd\`
+- /etc/pam.d/common-auth
+- /etc/pam.d/sshd
 
 Edit /etc/pam.d/common-auth\:
 
