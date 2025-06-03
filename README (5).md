@@ -57,9 +57,9 @@ sudo passwd <your-username>
 
 Install Google Authenticator PAM module:
 
-\`\`\`bash
+```bash
 sudo apt install libpam-google-authenticator -y
-\`\`\`
+```
 
 ---
 
@@ -68,15 +68,15 @@ sudo apt install libpam-google-authenticator -y
 Edit \`/etc/pam.d/common-auth\`:
 
 **Before:**
-\`\`\`plaintext
+```plaintext
 auth optional pam_cap.so
-\`\`\`
+```
 
 **After:**
-\`\`\`plaintext
+```plaintext
 auth optional pam_cap.so
 auth required pam_google_authenticator.so nullok
-\`\`\`
+```
 
  \`nullok\` allows password-only fallback before 2FA is set. This will be removed in the final step.
 
