@@ -155,7 +155,7 @@ Remove \`nullok\` from:
 Edit /etc/pam.d/common-auth\:
 
 ```bash
-nano /etc/pam.d/common-auth\
+nano /etc/pam.d/common-auth
 ```
 **Before:**
 
