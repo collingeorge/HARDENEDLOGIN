@@ -145,22 +145,38 @@ Remove \`nullok\` from:
 - \`/etc/pam.d/common-auth\`
 - \`/etc/pam.d/sshd\`
 
-**Final form (\`common-auth\`):**
-\`\`\`plaintext
-auth optional pam_cap.so
-auth required pam_google_authenticator.so
-\`\`\`
+Edit /etc/pam.d/common-auth\:
 
-**Final form (\`sshd\`):**
-\`\`\`plaintext
+```bash
+nano /etc/pam.d/common-auth\
+```
+**Before:**
+```plaintext
+auth required pam_google_authenticator.so nullok
+```
+**After:**
+```plaintext
 auth required pam_google_authenticator.so
-\`\`\`
+```
 
+Edit /etc/pam.d/sshd\:
+
+```bash
+nano /etc/pam.d/sshd
+```
+**Before:**
+```plaintext
+auth required pam_google_authenticator.so nullok
+```
+**After:**
+```plaintext
+auth required pam_google_authenticator.so
+```
 Restart SSH:
 
-\`\`\`bash
+```bash
 sudo systemctl restart sshd
-\`\`\`
+```
 
 ---
 
