@@ -95,15 +95,18 @@ Edit /etc/ssh/sshd_config:
 nano /etc/ssh/sshd_config
 ```
 - Add below line ~62:
+
   ```plaintext
   ChallengeResponseAuthentication yes
   ```
 - Add below line ~86:
+
   ```plaintext
   AuthenticationMethods keyboard-interactive
   ```
 
 Then restart SSH:
+
 ```bash
 sudo systemctl restart sshd
 ```
@@ -115,6 +118,7 @@ sudo systemctl restart sshd
 Edit /etc/pam.d/sshd:
 
 **Add at the top:**
+
 ```plaintext
 auth required pam_google_authenticator.so nullok
 ```
@@ -144,6 +148,7 @@ Back up emergency codes to encrypted storage.
 ### 6. Secure \`pam_google_authenticator\` Enforcement
 
 Remove \`nullok\` from:
+
 - \`/etc/pam.d/common-auth\`
 - \`/etc/pam.d/sshd\`
 
@@ -153,10 +158,12 @@ Edit /etc/pam.d/common-auth\:
 nano /etc/pam.d/common-auth\
 ```
 **Before:**
+
 ```plaintext
 auth required pam_google_authenticator.so nullok
 ```
 **After:**
+
 ```plaintext
 auth required pam_google_authenticator.so
 ```
@@ -167,10 +174,12 @@ Edit /etc/pam.d/sshd\:
 nano /etc/pam.d/sshd
 ```
 **Before:**
+
 ```plaintext
 auth required pam_google_authenticator.so nullok
 ```
 **After:**
+
 ```plaintext
 auth required pam_google_authenticator.so
 ```
