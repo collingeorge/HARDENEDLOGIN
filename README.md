@@ -142,8 +142,7 @@ google-authenticator
   - Disallow token reuse
   - Increase window for clock skew
   - Enable rate limiting
-
-Back up emergency codes to encrypted storage.
+- Back up emergency codes to encrypted storage.
 
 ---
 
